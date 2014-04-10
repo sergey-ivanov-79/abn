@@ -1,0 +1,153 @@
+@media (min-width: 960px) { /* Ширина экрана минимальная = 960px, но может быть больше 960px */
+    
+    .left-block{   
+        margin-left: -20px;
+    }
+    
+    .right-block{
+        margin-right: -20px;
+    }
+    
+    .right-block button{display: none;}
+}
+
+@media (max-width: 960px) { /* Ширина экрана максимальная = 960px, но может быть меньше 960px */
+    body { min-width: 740px; }
+    
+    /*.header {
+        position: absolute;
+    }*/
+    
+    .right-block button{display: none;}
+    
+    .pull-left { left: 10px; }
+    
+    .pull-right { right: 10px; }
+    
+    .container { width: 720px; }
+    
+    .left-block-contact {float: none; margin-bottom: 20px;}
+    
+    .right-block-contact{float: none;}
+    
+    /*сбил стиль*/
+    .apply ul > li:nth-child(3n + 1) {
+        clear: none;
+        margin-left: 0%;
+    }
+    
+    
+    .apply ul > li:nth-child(3n + 2) { 
+        margin-left: 0%;
+    }
+    
+    .apply ul > li:nth-child(3n + 3) {
+        margin-left: 0%;
+    }
+    
+    .apply ul > li:first-child { /* Стилья для 1-го Li */
+        clear: none;
+        margin-left: 0%;
+    }
+    
+    .apply ul > li:first-child + li { /* Стилья для 2-го Li */
+        margin-left: 0; /* 30.4% + 4.4% */
+    }
+    
+    .apply ul > li:first-child + li + li { /* Стилья для 3-го Li */
+        margin-left: 0; /* 30.4% + 4.4% + 30.4% + 4.4% */
+    }
+    /*Новый стиль*/
+    .apply ul > li{
+        width: 47%;
+        /*margin-right: 6%;*/
+        margin-right: -100%;
+    }
+    
+    .apply ul > li:nth-child(2n + 1) { /* Стилья для 1-го, 3-го, 5-го и тд. элементов Li */
+        clear: left !important;
+        margin-left: 0% !important;
+    }
+
+    .apply ul > li:nth-child(2n + 2) { /* Стилья для 2-го, 4-го, 6-го и тд. элементов Li */
+        margin-left: 53% !important; /* 47% + 6% */
+    }
+    
+    .apply ul > li:first-child, .apply ul > li:first-child + li + li { /* Стилья для 1-го Li и 3-го */
+        clear: left !important;
+        margin-left: 0%;
+    }
+    
+    .apply ul > li:first-child + li { /* Стилья для 2-го Li */
+        margin-left: 53%; /* 47% + 6% */
+    }
+    
+   
+
+} 
+
+@media (max-width: 740px) {/* Ширина экрана максимальная = 740px,и меньше но может быть меньше 740px */
+    body { min-width: 480px; }
+    
+    
+    
+    
+    
+    h1{font-size: 40px;}
+    
+    .container { width: auto;}
+    
+    .nav-list li{font-size: 13px;}
+    
+    .nav-list li a{padding: 0 10px;}
+    
+    .nav-list a.big-tel { font-size: 14px; }
+    
+    /*.left-block{float: none;}
+    
+    .right-block{float: none;}
+    
+    .nav-list li{float: none;}*/
+    
+    .benefits h5{font-size: 30px;}
+
+
+}
+
+@media (max-width: 590px){/* Ширина экрана максимальная = 590px,и меньше но может быть меньше 590px */
+    body { min-width: 420px; }
+    
+    .navigation{height: 25px;line-height: 25px;} 
+    
+    .right-block button{display: block;margin-top: 20px;}
+    
+    .nav-list{display: none;}
+
+    .container { width: auto; padding: 0 10px;}
+
+
+@media (max-width: 480px) {/* Ширина экрана максимальная = 480px,и меньше но может быть меньше 480px */
+    body { min-width: 340px; }
+    
+    
+   /* .header {
+        position: absolute;
+    }*/
+
+    .navigation{height: 20px;line-height: 20px;}
+
+    .nav-list li{font-size: 11px;}
+    
+    .nav-list li a{padding: 0 4px;}
+    
+    .nav-list a.big-tel { font-size: 12px; }
+
+    .container { width: auto; padding: 0 10px;}
+
+    .benefits h5{
+        font-size: 25px;
+    }
+
+@media (min-width: 600px) and (max-width: 900px) { /* ширина экрана от 600px до 900px */
+    
+}

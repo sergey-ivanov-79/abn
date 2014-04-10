@@ -1,0 +1,863 @@
+@import url(reset.css);
+
+/* Imports Fonts */
+
+@font-face {
+    font-family: 'proximanova';
+    src: url('../fonts/proximanova-bold.eot');
+    src: url('../fonts/proximanova-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-bold.woff') format('woff'),
+         url('../fonts/proximanova-bold.ttf') format('truetype'),
+         url('../fonts/proximanova-bold.svg#proximanovabold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proximanova';
+    src: url('../fonts/proximanova-semibold.eot');
+    src: url('../fonts/proximanova-semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-semibold.woff') format('woff'),
+         url('../fonts/proximanova-semibold.ttf') format('truetype'),
+         url('../fonts/proximanova-semibold.svg#proximanovasemibold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proximanova';
+    src: url('../fonts/proximanova-regular.eot');
+    src: url('../fonts/proximanova-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-regular.woff') format('woff'),
+         url('../fonts/proximanova-regular.ttf') format('truetype'),
+         url('../fonts/proximanova-regular.svg#proximanovaregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proximanova';
+    src: url('../fonts/proximanova-light.eot');
+    src: url('../fonts/proximanova-light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-light.woff') format('woff'),
+         url('../fonts/proximanova-light.ttf') format('truetype'),
+         url('../fonts/proximanova-light.svg#proximanovalight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+
+/* BASE CSS */
+
+body { 
+    padding-top: 70px;
+    min-width: 940px; /* Чтобы background на небольших экранах был показан на всю ширину с учетом scroll (ползунка).. 920px - контейнер + 10px + 10px paddinGИ по бокам */
+    font-weight: 400;
+    color: #fff;
+    font-family: 'proximanova', sans-serif;
+    position: relative;
+}
+
+img { display: block; }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { 
+    /*font-weight: bold; */   
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.2; 
+}
+
+h1{
+    font-size: 68px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-shadow: 0 1px 1px #000;/*Y X насыщенность цвет*/
+}
+
+h2{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    color: #1c2730;
+}
+
+h4{
+    font-size: 17px;
+    font-weight: 400;
+}
+
+h1 a.log{
+    display: block;
+    text-indent: -9999px;
+    font-size: 5px;
+}
+
+p{
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: 0px;
+    line-height: 18px;
+}
+
+p.font-14{
+    font-size: 14px;
+    text-align: center;
+}
+
+.semibold{
+    font-weight: 500;
+}
+
+.to-h1{
+     margin-top: 18px;      
+}
+
+ /*Button*/
+
+.btn {
+    box-sizing: content-box;/*позволяют не изменять размер кнопки*/
+    -moz-box-sizing: content-box;
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0;
+    background: none transparent;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'proximanova', sans-serif;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-width: 2px;
+    border-style: solid;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+
+    /* Дополнительные эфекты
+    
+    background-color: #d25a3d;
+     -webkit-box-shadow: #fff 1px 1px 0, inset #682313 1px 1px 0;
+    -moz-box-shadow: #fff 1px 1px 0, inset #682313 1px 1px 0;
+    box-shadow: #fff 1px 1px 0, inset #682313 1px 1px 0;
+    text-shadow: 1px 1px 1px #682313;    
+    /* -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;*/
+   /*text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;*/     
+    /*background-image: -moz-linear-gradient(top, #d25a3d, #F53426);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d25a3d), to(#F53426));
+    background-image: -webkit-linear-gradient(top, #d25a3d, #F53426);
+    background-image: -o-linear-gradient(top, #d25a3d, #F53426);
+    background-image: linear-gradient(to bottom, #d25a3d, #F53426);
+    background-repeat: repeat-x;
+    border: 1px solid #fff;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-bottom-color: #b3b3b3;*/
+}
+
+/* Стиль для H2, когда он является следующим элементом после H1.. */
+/* h1 + h2 { color: black!important; } */ 
+
+/*.btn + .btn { margin-left: 10px; }*/
+
+.btn-slider:hover, .btn-slider:focus {
+    text-decoration: none;
+    color: #fff;
+    border-color: #fff;
+    background: transparent;
+}
+
+ /*End Button*/
+ 
+.container{
+    width: 920px; 
+    margin: 0 auto; 
+    /*padding: 0 10px;*/
+    outline: 0px solid #000;
+    position: relative;
+}
+
+/*
+.wrapper{
+    width: 100%;
+	margin:0 auto;
+    min-width: 1024px;
+    max-width: 1500px;
+    background-size: 100% auto;
+    position: relative;
+}*/
+
+
+
+/*Начало блока   .header*/
+
+.header{
+    outline: 0px solid #000;
+    background-color: #1c2730;
+    position: fixed; 
+    left: 0;
+    top: 0;   
+    width: 100%;
+    z-index: 600;
+    background-size: cover;
+}
+
+.navigation{
+    height: 70px;
+    line-height: 70px;
+}
+
+.left-block{   
+    /*margin-left: -20px; */
+    float: left;  
+}
+
+.right-block{
+    /*margin-right: -20px;*/
+    float: right;   
+}
+
+p.logo a{
+    font-size: 24px;
+    font-family: 'proximanova', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 5px;
+    line-height: 70px;
+}
+.nav-list a{
+    display: block;
+}
+.nav-list > li{
+    font-family: 'proximanova',sans-serif;
+    float: left;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+     position: relative;
+}
+
+.nav-list > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    background-color: #1c2730;
+    background: #fff 0 0 repeat #fff;
+    z-index: 50;
+}
+
+.nav-list > li:hover > ul {
+    display: block;
+    
+}
+
+.nav-list > li > ul a {
+    text-align: center;
+    padding: 4px 5px;
+    text-transform: none;
+    line-height: 1.2;
+    display: block;
+}
+
+
+.nav-list > li > ul li + li {
+    border-top: 1px dashed #bbb;
+}
+
+
+
+.nav-list li a{
+    text-decoration: none;
+    color: #fff; 
+    display: block;
+    padding: 0 20px;
+}
+
+.nav-list li a:hover{
+    color: #24d1c4;
+    /*text-shadow: 1px 0px 1px #24d1c4;*//*Y X насыщенность цвет*/
+}
+
+.nav-list a.big-tel{
+    font-size: 18px;
+    padding-right: 0;
+}
+
+.nav-list li a.green{
+    color: #24d1c4;
+    text-shadow: none;
+}
+
+.green{
+    color: #24d1c4;
+    border-color: #24d1c4;
+}
+
+/*Конец блока   .header*/
+
+
+
+/*Начало блока   .slider*/
+#slider-main{
+    outline: 0px solid #000;
+    overflow: hidden;
+}
+
+#slider-main h1{
+    letter-spacing: 9px;
+}
+
+#slider-main h4{
+    letter-spacing: 2px;
+    padding-top: 150px; 
+    line-height: 1.0;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+i{
+    font-weight: bold;
+}
+
+.pull-left{
+    display: block;
+    position: absolute;
+    top: 207px;
+    left: -20px;
+    font-size: 72px;
+    color: #636567;    
+}
+
+.pull-right{
+    display: block;
+    position: absolute;
+    top: 207px;
+    right: -20px;
+    font-size: 72px;
+    color: #636567;
+}
+
+.pull-left:hover, .pull-right:hover{
+    color: #fff;
+} 
+
+ul.slide-list{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+#slider-main  ul.slide-list > li{
+    display: block;
+    
+    float: left;  
+    width: 100%;
+    height: 470px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide1{
+    background-image: url("../images/slide1.jpg");
+}
+
+.slide2{
+    background-image: url("../images/slide2.jpg");
+}
+
+.slide3{
+    background-image: url("../images/slide3.jpg");
+}
+
+.slide p{
+    text-align: center;
+    margin-top: 12px;
+}
+
+.to-grey{
+    color: #999999;
+}
+
+.circles{
+    text-align: center;
+}
+
+.circles ul{
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.circles ul li{
+    float: left;
+}
+
+.circles ul li a {   
+    background-color: #535354;
+    text-align: center;
+    height: 11px;
+    width: 11px;
+    /*padding: 4px;*/
+    display: inline-block;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    -khtml-border-radius: 11px;
+    border-radius: 11px;
+    margin-top: 120px;
+    margin-right: 20px;
+    /*border: 1px solid #b6a588;*/
+}
+
+.circ2 ul li a{
+     margin-top: 75px;
+}
+
+p.gst{
+    margin-top: 30px;
+}
+
+.circles ul li a:hover{
+    opacity: 1;
+    background-color: #fff;
+}
+
+.circles ul li a.active{
+    opacity: 0.8;
+    background-color: #fff;
+}
+
+/*Конец блока   .slider*/
+
+
+/*Начало блока   .apply*/
+
+.apply{
+    outline: 0px solid #000;
+    padding: 80px 0 90px 0;
+}
+
+.icons > h3{
+    text-transform: uppercase;
+}
+
+.black{
+    color: #1c2730;
+    text-decoration: none;
+    letter-spacing: 8px;
+    border-bottom: 3px solid #000b15;
+    margin-top: 50px;    
+}
+
+.apply ul > li a{
+    display: block;
+}
+
+.apply ul > li a:hover i{
+     color: #217382;
+} 
+
+.apply ul > li{
+    float: left;
+    display: inline;
+    text-align: center;
+    width: 30.4%;
+    /*margin-right: 4.4%;*/
+    margin-right: -100%;/*позволяет не писать отступ 4.4% и все элементы друг над другом */
+    margin-bottom: 40px;
+}
+
+.apply ul > li:nth-child(3n + 1) { /* Стилья для 1-го, 4-го, 7-го и тд. элементов Li */
+    clear: left;
+    margin-left: 0%;
+}
+
+.apply ul > li:nth-child(3n + 2) { /* Стилья для 2-го, 5-го, 8-го и тд. элементов Li отодвигаем элементы списка*/
+    margin-left: 34.8%; /* 30.4% + 4.4% */
+}
+
+.apply ul > li:nth-child(3n + 3) { /* Стилья для 3-го, 6-го, 9-го и тд. элементов Li отодвигаем элементы списка*/
+    margin-left: 69.6%; /* 30.4% + 4.4% + 30.4% + 4.4% */
+}
+
+
+/* Для поддержки старых браузеров  (to support old browsers) */
+
+.apply ul > li:first-child { /* Стилья для 1-го Li */
+    clear: left;
+    margin-left: 0%;
+}
+
+.apply ul > li:first-child + li { /* Стилья для 2-го Li */
+    margin-left: 34.8%; /* 30.4% + 4.4% */
+}
+
+.apply ul > li:first-child + li + li { /* Стилья для 3-го Li */
+    margin-left: 69.6%; /* 30.4% + 4.4% + 30.4% + 4.4% */
+}
+/*   */
+
+
+.apply ul > li i{
+    color: #fff;
+    font-size: 40px;
+}
+
+.apply ul > li i:hover{
+    color: #217382;
+}
+
+.apply > h3{
+    margin-top: 47px;
+    margin-bottom: 50px;
+}
+
+.icons { overflow: hidden; }/*чтобы спрятать всё что выходит за пределы блока*/
+
+.apply-text{
+    margin: 0 10% 0 10%;
+    text-align: center;
+}
+
+.apply-text h3{
+    margin-top: 28px;
+}
+
+.apply-text > p{
+    margin-bottom: 34px;
+}
+
+.rectangle{
+    padding: 36px 0 30px 0;
+    text-align: center;
+    background-color: #164d57;
+}
+
+.background{
+    height: 110px;
+    background-color: #217382;
+    z-index: 20;
+}
+
+.padd{
+    padding: 6px 8px;
+    letter-spacing: 2px;
+}
+
+/*Конец блока   .apply*/
+
+
+/*Начало блока   .about*/
+
+.about{
+    background-color: #164d57;
+    outline: 0px solid #000;    
+}
+
+.to-about{
+    overflow: hidden;
+    padding: 80px 0 100px;
+}
+
+.border{
+    border-bottom: 3px solid #227888;
+    text-decoration: none;
+    color: #fff;
+}
+
+.about h3{
+    color: #fff;
+    width: 53%;
+    margin: 48px  auto 54px auto;    
+}
+
+.group{
+   /* margin-right: -75px;*/
+    padding: 0 22px 0 22px;
+    outline: 0px solid #000;
+}
+
+.about ul > .item{
+    display: inline;
+    margin-bottom: 25px;
+    width: 28%;
+    /*margin-right: 8%;*/
+    margin-right: -100%;   
+    text-align: center;
+    float: left;  
+    outline: 0px solid #000;
+}
+
+.about ul > li:nth-child(3n + 1) { /* Стилья для 1-го, 4-го, 7-го и тд. элементов Li */
+    clear: left;
+    margin-left: 0% !important;
+}
+
+.about ul > li:nth-child(3n + 2) { /* Стилья для 2-го, 5-го, 8-го и тд. элементов Li */
+    margin-left: 36%; /* 28% + 8% */
+}
+
+.about ul > li:nth-child(3n + 3) { /* Стилья для 3-го, 6-го, 9-го и тд. элементов Li */
+    margin-left: 72%; /* 28% + 8% + 28% + 8% */
+}
+
+/* Для поддержки старых браузеров  (to support old browsers) */
+
+.apply ul > li:first-child { /* Стилья для 1-го Li */
+    clear: left;
+    margin-left: 0%;
+}
+
+.apply ul > li:first-child + li { /* Стилья для 2-го Li */
+    margin-left: 36%; /* 28% + 8% */
+}
+
+.apply ul > li:first-child + li + li { /* Стилья для 3-го Li */
+    margin-left: 72%; /* 28% + 8% + 28% + 8% */
+}
+/*   */
+
+.about ul > .item i{
+    color: #217382;
+    font-size: 80px;
+}
+
+.about ul > .item i:hover{
+    color: #fff;
+}
+
+.about ul > .item p{
+    letter-spacing: 1px;
+    margin-top: 25px;
+}
+
+/*Конец блока   .about*/
+
+
+/*Начало блока   .benefits*/
+.benefits{
+    outline: 0px solid #000;
+    background-image: url("../images/benef-img-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 515px;   
+}
+
+.to-fon{
+    padding: 65px 0 0;
+}
+
+h5.big-text{
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center;
+    margin: 44px 0 28px;   
+}
+
+/*Конец блока   .benefits*/
+
+/*Начало блока   .contact*/
+
+.contact{
+    outline: 0px solid #000;
+    padding: 80px 0 85px;
+}
+
+.contact h2{  
+    margin-bottom: 60px;
+}
+
+.left-block-contact{
+   /* width: 230px;*/   
+    float: left;
+    margin-right: 10%;
+    outline: 0px solid #000;
+}
+
+.left-block-contact a{
+    background-color: #24d1c4;
+    text-align: center;
+    height: 26px;
+    line-height: 26px;
+    width: 26px;
+    padding: 12px;
+    display: inline-block;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -khtml-border-radius: 25px;
+    border-radius: 25px;
+    margin-right: 20px;
+    color: #fff;
+    font-size: 25px;
+}
+
+.float{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+}
+
+.float p{
+    font-weight: 300;
+}
+
+.float strong{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.right-bl{
+    font-weight: 500;
+    text-transform: uppercase;
+    overflow: hidden;/*чтобы за этими элементами -.right-bl никакие элементы не вставали*/
+}
+
+.left-block-contact-1{
+    margin-bottom: 40px;
+}
+
+.text{
+    margin-left: 20px;
+}
+
+
+.right-block-contact{
+    width: 65%;
+    float: right;
+    outline: 0px solid #000;
+}
+
+input{
+    font-size: 14px;
+    color: #000;   
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #d1d1d1;
+    margin-bottom: 15px;
+    padding: 3px 10px;
+    -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+}
+
+.contact-form p{
+    text-transform: uppercase;
+}
+
+.input-1{
+    width: 51%;
+    margin-right: 2%;
+}
+
+.input-2{
+    width: 46%;
+}
+
+.input-3{
+    width: 100%;
+}
+
+textarea{
+    font-size: 14px;
+    height: 150px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #d1d1d1;
+    padding: 3px 10px;
+     -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+}
+
+.contact-forma{
+    margin-bottom: 70px;
+}
+
+.center{
+    text-align: center;
+    font-weight: 400;
+}
+/*Конец блока   .contact*/
+
+
+/*Начало блока   .footer*/
+
+.footer{
+    padding: 60px 0;
+    outline: 0px solid #000;
+    background-color: #1c2730;
+}
+
+.footer-left{
+    width: 37%;
+    float: left;
+    outline: 0px solid #000;
+}
+
+.footer-left p{
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.footer-right{
+    width: 27%;
+    float: right;
+    outline: 0px solid #000;
+}
+
+.footer-right ul li{
+    float: right;
+    margin-left: 6%;
+    display: block;
+}
+
+.top-f{
+    margin-top: 3px;
+}
+/*Конец блока .footer*/
+
+
+/* Специальные классы (Special Classes) */
+.clearfix {
+    clear: both;
+}
+.clearfix:before, .clearfix:after {
+    content: '';
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+.no-marg-top {
+    margin-top: 0!important;
+}
+
+.no-marg-bottom {
+    margin-bottom: 0!important;
+}
